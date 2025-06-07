@@ -1,0 +1,36 @@
+namespace: scalified
+name: baseline
+version: 1.0.0
+readme: README.md
+authors:
+  - Vladyslav Baidak <vld.x@hotmail.com>
+
+description: Ansible collection for basic server setup and configuration
+
+license_file: LICENSE
+
+tags:
+  - infrastructure
+  - baseline
+  - init
+  - server
+  - setup
+  - configuration
+  - system
+  - hostname
+  - time
+  - mail
+
+repository: https://github.com/scalified/ansible-baseline
+documentation: https://github.com/scalified/ansible-baseline
+homepage: https://github.com/scalified/ansible-baseline
+issues: https://github.com/scalified/ansible-baseline/issues
+
+build_ignore:
+  - "*.gz"
+  - .gitignore
+  - .github
+  - .ansible-lint.yml
+  - .ansible
+  - molecule
+  - tests

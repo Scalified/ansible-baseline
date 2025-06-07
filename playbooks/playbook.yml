@@ -1,0 +1,7 @@
+---
+- name: Baseline Server Configuration
+  hosts: "{{ baseline_hosts | default('all') }}"
+  become: true
+  gather_facts: true
+  roles:
+    - scalified.baseline.system
