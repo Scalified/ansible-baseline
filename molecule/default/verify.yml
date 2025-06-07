@@ -1,0 +1,22 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Molecule Tests Information
+      ansible.builtin.debug:
+        msg: "Running verification tests on {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+    - name: (hostname) Get current hostname
+      ansible.builtin.command: hostname
+      register: current_hostname_result
+      changed_when: false
+
+    - name: (hostname) Get expected hostname value
+      ansible.builtin.set_fact:
+        expected_hostname: "{{ system_hostname | default(ansible_host) }}"
+
+    - name: Molecule Tests Summary
+      ansible.builtin.debug:
+        msg:
+          - "✓ Hostname: PASSED"

@@ -1,0 +1,11 @@
+---
+- name: Get current hostname
+  ansible.builtin.command: hostname
+  register: current_hostname
+  changed_when: false
+
+- name: Set hostname
+  ansible.builtin.command:
+    cmd: "hostname {{ system_hostname }}"
+  become: true
+  changed_when: current_hostname.stdout != system_hostname

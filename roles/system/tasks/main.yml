@@ -1,0 +1,6 @@
+- name: System Info
+  ansible.builtin.debug:
+    msg:
+      - "Running on '{{ ansible_distribution }} {{ ansible_distribution_version }}' distribution"
+
+- ansible.builtin.include_tasks: hostname.yml
