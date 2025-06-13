@@ -1,3 +1,6 @@
 ---
-- name: Test baseline playbook
-  import_playbook: scalified.baseline.playbook
+- name: Baseline Test
+  hosts: all
+  gather_facts: true
+  roles:
+    - scalified.baseline.system

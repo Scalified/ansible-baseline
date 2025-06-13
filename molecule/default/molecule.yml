@@ -4,9 +4,10 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
-    image: ubuntu:latest
-    privileged: true
+  - name: ubuntu
+    image: ubuntu
+  - name: rocky
+    image: rockylinux/rockylinux:9
 provisioner:
   name: ansible
 verifier:

@@ -5,13 +5,13 @@
 [![Release](https://img.shields.io/github/v/release/Scalified/ansible-baseline?style=flat-square)](https://github.com/Scalified/ansible-baseline/releases/latest)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-scalified.baseline-blue.svg)](https://galaxy.ansible.com/scalified/baseline)
 
-An Ansible collection for basic server setup and configuration tasks. This collection provides essential roles for initializing and configuring servers with common baseline settings
+An Ansible collection for basic server setup and configuration. This collection provides essential roles for system initialization, package management, security hardening, and infrastructure preparation
 
 ## Requirements
 
 - **Ansible:** >= 2.15.0
 - **Python:** >= 3.6
-- **Target OS:** Debian
+- **Target OS:** Ubuntu, Rocky
 - **Privileges:** Most roles require `become: true` (sudo access)
 
 ## Installation
@@ -35,12 +35,15 @@ ansible-galaxy collection install git+https://github.com/scalified/ansible-basel
 ---
 collections:
   - name: scalified.baseline
-    version: ">=0.0.1"
 ```
 
 ```bash
 ansible-galaxy collection install -r requirements.yml
 ```
+
+## Usage
+
+* [Roles: System](roles/system/README.md)
 
 ## License
 

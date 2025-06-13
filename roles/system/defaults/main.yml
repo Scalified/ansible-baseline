@@ -1,2 +1,15 @@
 ---
+system_os_family: "{{ ansible_os_family | lower }}"
+
+system_reboot_timeout: 300
+
+system_update_type: "safe"
+system_update_cache_valid_time: 3600
+system_update_autoremove: true
+system_update_autoclean: true
+
 system_hostname: "{{ ansible_host }}"
+
+system_timezone: "UTC"
+
+system_vm_max_map_count: 262144
