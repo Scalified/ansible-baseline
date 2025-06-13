@@ -10,7 +10,6 @@ Configures basic system settings such as:
 ---
 - name: Configure servers
   hosts: all
-  become: true
   roles:
     - scalified.baseline.system
 ```

@@ -35,12 +35,48 @@ ansible-galaxy collection install git+https://github.com/scalified/ansible-basel
 ---
 collections:
   - name: scalified.baseline
-    version: ">=0.0.1"
+    version: ">=1.0.0"
 ```
 
 ```bash
 ansible-galaxy collection install -r requirements.yml
 ```
+
+## Usage
+
+### Playbooks
+
+```yaml
+---
+- name: Run baseline configuration
+  #include: scalified.baseline.playbook
+  import_playbook: scalified.baseline.playbook
+  vars:
+    baseline_hosts: all
+```
+
+#### Variables
+
+| Variable         | Description              | Default Value | Required |
+|------------------|--------------------------|---------------|----------|
+| `baseline_hosts` | Target hosts or groups   | `all`         | No       |
+
+### Roles
+
+```yaml
+---
+- name: Configure servers
+  hosts: all
+  roles:
+    - scalified.baseline.system
+```
+
+#### Variables
+
+| Variable          | Description                       | Default Value        | Required |
+| ----------------- | --------------------------------- | -------------------- | -------- |
+| `system_hostname` | Hostname to set on target servers | `{{ ansible_host }}` | No       |
+
 
 ## License
 
